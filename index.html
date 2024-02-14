@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="activity-log-container"></div>
+
+    <div class="container">
+      <h1 class="h1text">To-Do List</h1>
+      <button id="view-logs-btn">View Activity Logs</button>
+      <button onclick="renderBacklogs()">View Backlogs</button>
+
+      <!-- Separate div for the activity log -->
+      <div class="entry_field">
+        <input type="text" id="todo-input" placeholder="Enter a to-do item" />
+        <button type="submit" class="submitBtn" id="submitBtn">Add</button>
+
+        <label for="duedate">Duedate:</label>
+        <input type="date" id="duedate" name="duedate" />
+
+        <label for="category-filter">Category:</label>
+        <input type="text" id="category-filter" />
+
+        <label for="priority-select">Priority:</label>
+        <select id="priority-select">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <div class="filter-section">
+        <label for="filter-priority-select">Filter by Priority:</label>
+        <select id="filter-priority-select">
+          <option value="all">All</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label for="filter-duedate">Filter by Due Date:</label>
+        <input type="date" id="filter-duedate" name="filter-duedate" />
+
+        <label for="filter-category">Filter by Category:</label>
+        <input type="text" id="filter-category" />
+
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by">
+          <option value="none">None</option>
+          <option value="duedate">Due Date</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
+
+      <div class="search-field-container">
+        <label for="search-term">Search:</label>
+        <input type="text" id="search-term" />
+
+        <label for="search-type">Search Type:</label>
+        <select id="search-type">
+          <option value="similar">Similar Words</option>
+          <option value="partial">Partial Search</option>
+        </select>
+
+        <button id="search-btn">Search</button>
+      </div>
+      <!-- <div style="display: flex">
+        <span>status</span>
+        <span>todo</span>
+        <span>Due Date</span>
+        <span>Priority</span>
+        <span>category</span>
+        <span>edit</span>
+        <span>delete</span>
+      </div> -->
+      <div id="todos-list">
+        <!-- <div class="draggable-todo" draggable="true" id="todo-${index}">
+          <div class="todo">
+            
+          </div>
+        </div> -->
+        <!-- <div class="todo" id="0">
+          <i class="bi bi-circle"></i>
+          <i class="bi bi-check-circle-fill"></i>
+          <p class="checked">Go get milk.</p>
+          <i class="bi bi-pencil-square"></i>
+          <i class="bi bi-trash"></i>
+        </div> -->
+      </div>
+    </div>
+    <script src="todo.js"></script>
+    <footer>Made by @hritiiiiik26</footer>
+  </body>
+</html>
